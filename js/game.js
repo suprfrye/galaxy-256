@@ -1,23 +1,40 @@
 var Game = function(boardString){
+  var board = '';
   this.board = '';
   if (arguments.length === 1) {
-    this.board = boardString;
+    this.board = this.toArray(boardString);
   } else {
     function random() {
       return Math.floor(Math.random() * 10 + 6);
     };
-    var firstTwo = random();
-    var secondTwo = random();
+    var firstTwo = random(), secondTwo = random();
     for ( var i = 0; i < 16; i++ ) {
       if (i === firstTwo || i === secondTwo) {
-        this.board += '2';
+        board += '2';
       } else {
-        this.board += '0';
+        board += '0';
       };
     };
+    this.board = this.toArray(board);
   }
 };
 
-Game.prototype.toString = function() {
-  this.board.
+Game.prototype = {
+
+  toString: function() {
+    for( var i = 0; i < 16; i += 4){
+      this.array = this.board.slice(0 + i, 4 + i)
+      console.log(this.array)
+    }
+  },
+
+  toArray: function(chars) {
+    var boardArray = [];
+    for( var i = 0; i < 16; i += 4) {
+      var subarray = chars.slice(0 + i, 4 + i);
+      boardArray.push(subarray.split(''));
+    }
+    return boardArray;
+  }
 };
+
