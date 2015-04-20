@@ -22,10 +22,9 @@ var Game = function(boardString){
 Game.prototype = {
 
   toString: function() {
-    for( var i = 0; i < 16; i += 4){
-      this.array = this.board.slice(0 + i, 4 + i)
-      console.log(this.array)
-    }
+    this.board.forEach(function(row) {
+      console.log(row.join(''));
+    });
   },
 
   toArray: function(chars) {
