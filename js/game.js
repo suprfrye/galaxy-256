@@ -87,7 +87,7 @@ Game.prototype = {
         })
         break;
       case 'right':
-        this.board = this.rightAddNumbers(this.filterZeros(this.board))
+        this.board = this.rightAddNumbers(this.filterZeros(this.board));
         this.board.forEach(function(row) {
           for( var i = 0; row.length < 4; i++ ) {
             row.unshift('0');
@@ -96,7 +96,7 @@ Game.prototype = {
         break;
       case 'up':
         var transposedArray = _.zip.apply(null, this.board);
-        transposedArray = this.filterZeros(transposedArray)
+        transposedArray = this.leftAddNumbers(this.filterZeros(transposedArray));
         transposedArray.forEach(function(row) {
           for( var i = 0; row.length < 4; i++ ) {
             row.push('0');
@@ -106,7 +106,7 @@ Game.prototype = {
         break;
       case 'down':
         var transposedArray = _.zip.apply(null, this.board);
-        transposedArray = this.filterZeros(transposedArray)
+        transposedArray = this.rightAddNumbers(this.filterZeros(transposedArray));
         transposedArray.forEach(function(row) {
           for( var i = 0; row.length < 4; i++ ) {
             row.unshift('0');
