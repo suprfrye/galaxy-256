@@ -36,6 +36,29 @@ Game.prototype = {
     return boardArray;
   },
 
+    filterNonZeros: function(matrix) {
+    filtered = [];
+    matrix.forEach(function(row) {
+      filtered.push(row.filter(function(value) {
+        return value === '0';
+      }));
+    });
+    return filtered
+  },
+
+  randomNumber: function() {
+    var randoNumber = (Math.random() < .8) ? '2' : '4';
+    return randoNumber
+  },
+
+  spawn: function(matrix) {
+    var index = matrix.length;
+    var slicedArrays = matrix.slice(Math.floor(Math.random() * index));
+    var insertArray = slicedArrays[slicedArrays.length - 1];
+    insertArray.splice(Math.floor(Math.random() * insertArray.length), 1, this.randomNumber());
+
+  },
+
   filterZeros: function(matrix) {
     filtered = []
     matrix.forEach(function(row) {
