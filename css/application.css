@@ -1,3 +1,13 @@
+body {
+  margin-left: 21.5%;
+  margin-right: auto;
+}
+
+h1 {
+  margin-left: 33%;
+  font-family: sans-serif;
+}
+
 #board {
   height: 400px;
   width: 800px;
