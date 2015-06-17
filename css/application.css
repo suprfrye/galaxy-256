@@ -12,3 +12,7 @@
   display: inline-block;
   margin: 3px;
 }
+
+p {
+  text-align: center;
+}
