@@ -104,47 +104,53 @@ Game.prototype = {
 
   },
 
-  move: function(dir) {
-    that = this;
-    switch (dir) {
-      case 'left':
-        this.board = this.leftAddNumbers(this.filterZeros(this.board))
-        this.board.forEach(function(row) {
-          for( var i = 0; row.length < 4; i++ ) {
-            row.push('0');
-          }
-        })
-        break;
-      case 'right':
-        this.board = this.rightAddNumbers(this.filterZeros(this.board));
-        this.board.forEach(function(row) {
-          for( var i = 0; row.length < 4; i++ ) {
-            row.unshift('0');
-          }
-        })
-        break;
-      case 'up':
-        var transposedArray = _.zip.apply(null, this.board);
-        transposedArray = this.leftAddNumbers(this.filterZeros(transposedArray));
-        transposedArray.forEach(function(row) {
-          for( var i = 0; row.length < 4; i++ ) {
-            row.push('0');
-          }
-        })
-        this.board = _.zip.apply(null, transposedArray);
-        break;
-      case 'down':
-        var transposedArray = _.zip.apply(null, this.board);
-        transposedArray = this.rightAddNumbers(this.filterZeros(transposedArray));
-        transposedArray.forEach(function(row) {
-          for( var i = 0; row.length < 4; i++ ) {
-            row.unshift('0');
-          }
-        })
-        this.board = _.zip.apply(null, transposedArray);
-        break;
-    }
-  that.spawn()
+  moveLeft: function() {
+    this.board = this.leftAddNumbers(this.filterZeros(this.board))
+    this.board.forEach(function(row) {
+      for( var i = 0; row.length < 4; i++ ) {
+        row.push('0');
+      }
+    })
+    this.spawn();
+    this.toString();
+  },
+        
+
+  moveRight: function() {
+    this.board = this.rightAddNumbers(this.filterZeros(this.board));
+    this.board.forEach(function(row) {
+      for( var i = 0; row.length < 4; i++ ) {
+        row.unshift('0');
+      }
+    })
+    this.spawn();
+    this.toString();
+  },
+  
+  moveUp: function() {
+    var transposedArray = _.zip.apply(null, this.board);
+    transposedArray = this.leftAddNumbers(this.filterZeros(transposedArray));
+    transposedArray.forEach(function(row) {
+      for( var i = 0; row.length < 4; i++ ) {
+        row.push('0');
+      }
+    })
+    this.board = _.zip.apply(null, transposedArray);
+    this.spawn();
+    this.toString();
+  },
+  
+  moveDown: function() {
+    var transposedArray = _.zip.apply(null, this.board);
+    transposedArray = this.rightAddNumbers(this.filterZeros(transposedArray));
+    transposedArray.forEach(function(row) {
+      for( var i = 0; row.length < 4; i++ ) {
+        row.unshift('0');
+      }
+    })
+    this.board = _.zip.apply(null, transposedArray);
+    this.spawn();
+    this.toString();
   }
 };
 
