@@ -3,3 +3,11 @@
   width: 800px;
   background-color: #3399ff;
 }
+
+.cell {
+  height: 90px;
+  width: 190px;
+  background-color: #ffcc33;
+  display: inline-block;
+  margin: 3px;
+}
