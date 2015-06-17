@@ -39,7 +39,7 @@ Game.prototype = {
     return boardArray;
   },
 
-    filterNonZeros: function(matrix) {
+  filterNonZeros: function(matrix) {
     filtered = [];
     matrix.forEach(function(row) {
       filtered.push(row.filter(function(value) {
