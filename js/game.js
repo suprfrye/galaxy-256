@@ -51,11 +51,14 @@ Game.prototype = {
     return randoNumber
   },
 
-  spawn: function(matrix) {
-    var index = matrix.length;
-    var slicedArrays = matrix.slice(Math.floor(Math.random() * index));
-    var insertArray = slicedArrays[slicedArrays.length - 1];
-    insertArray.splice(Math.floor(Math.random() * insertArray.length), 1, this.randomNumber());
+  spawn: function() {
+      var index = (Math.floor(Math.random() * 4));
+      var sampledArray = _.sample(this.board);
+      if (sampledArray[index] === "0") {
+        sampledArray.splice(index, 1, this.randomNumber());
+      } else {
+        this.spawn();
+      }
 
   },
 
@@ -99,6 +102,7 @@ Game.prototype = {
   },
 
   move: function(dir) {
+    that = this;
     switch (dir) {
       case 'left':
         this.board = this.leftAddNumbers(this.filterZeros(this.board))
@@ -137,6 +141,7 @@ Game.prototype = {
         this.board = _.zip.apply(null, transposedArray);
         break;
     }
+  that.spawn()
   }
 };
 
