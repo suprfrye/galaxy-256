@@ -105,7 +105,7 @@ Game.prototype = {
   },
 
   moveLeft: function() {
-    this.board = this.leftAddNumbers(this.filterZeros(this.board))
+    this.board = this.leftAddNumbers(this.filterZeros(this.board));
     this.board.forEach(function(row) {
       for( var i = 0; row.length < 4; i++ ) {
         row.push('0');
