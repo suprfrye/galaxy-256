@@ -66,7 +66,7 @@ Game.prototype = {
   },
 
   filterZeros: function(matrix) {
-    filtered = []
+    filtered = [];
     matrix.forEach(function(row) {
       filtered.push(row.filter(function(value) {
         return value !== '0';
