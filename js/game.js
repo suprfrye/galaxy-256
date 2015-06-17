@@ -22,8 +22,11 @@ var Game = function(boardString){
 Game.prototype = {
 
   toString: function() {
-    this.board.forEach(function(row) {
-      console.log(row.join(''));
+    that = this
+    $('.row').each(function(outer) {
+      $(this).children().each(function(inner) {
+        $(this).html("<p>" + that.board[outer][inner] + "</p>");
+      });
     });
   },
 
