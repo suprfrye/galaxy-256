@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  var game = new Game();
-  console.log(game);
-  var gameOne = new Game('0000000220000000');
-  console.log(gameOne);
+  var gameOne = new Game('2000020000200002');
+  gameOne.toString();
 });
