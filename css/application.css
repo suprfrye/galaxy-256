@@ -14,11 +14,11 @@ body {
 }
 
 .cell {
-  height: 94px;
-  width: 191px;
-  background-color: #ffcc33;
+  min-height: 25%;
+  min-width: 20%;
+  background-color: rgba(255,255,255,0.25);
   display: inline-block;
-  margin: 3px;
+  margin: 0.25%;
 }
 
 p {
