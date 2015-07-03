@@ -3,11 +3,9 @@ body {
   width: 100vw;
   background-image: url("../img/space.jpg");
   background-size: cover;
-}h1 {
-  margin-left: 33%;
+  color: #fff;
   font-family: sans-serif;
 }
-
 #board {
   height: 400px;
   width: 800px;
