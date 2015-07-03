@@ -6,6 +6,11 @@ body {
   color: #fff;
   font-family: sans-serif;
 }
+
+h1 {
+  text-align: center;
+}
+
 #board {
   height: 60%;
   width: 40%;
