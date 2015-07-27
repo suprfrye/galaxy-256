@@ -28,6 +28,10 @@ h1 {
   background-color: rgba(255,255,255,0.25);
   display: inline-block;
   margin: 0.25%;
+.left, .middle-left {
+  border-right: 10px solid #fff;
+}
+
 .right {
   border-left: 10px solid #fff;
 }
