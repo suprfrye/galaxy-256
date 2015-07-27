@@ -14,24 +14,35 @@ h1 {
 }
 
 #board {
-  height: 60%;
-  width: 40%;
+  height: 430px;
+  width: 445px;
   margin: 0 auto;
-  border: 1px solid #707070;
-  background-color: transparent;
-  /*padding: 5px;*/
+  background-color: rgba(255,255,255,0.25);
+  border: 10px solid #fff;
+  border-radius: 5%;
 }
 
 .cell {
-  min-height: 25%;
-  min-width: 20%;
-  background-color: rgba(255,255,255,0.25);
+  height: 100px;
+  width: 100px;
   display: inline-block;
-  margin: 0.25%;
+}
+
+#first, #second, #third {
+  border-bottom: 10px solid #fff;
+}
+
+.left, .middle-left {
+  border-right: 10px solid #fff;
+}
+
+.right {
+  border-left: 10px solid #fff;
 }
 
 p {
   text-align: center;
   font-size: 4em;
+  padding-top: 10px;
   margin: 0 auto;
 }
