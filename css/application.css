@@ -8,7 +8,9 @@ body {
 }
 
 h1 {
+  font-family: 'Audiowide', cursive;
   text-align: center;
+  font-size: 4em;
 }
 
 #board {
