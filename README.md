@@ -8,3 +8,5 @@ Left to do
 - scoreboard
 - trip progression visual
 - disaster alerts on failure/game over
+
+![Mockup for Galaxy 256](img/256-mockup.png)
